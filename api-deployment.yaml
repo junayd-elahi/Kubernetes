@@ -4,26 +4,22 @@ metadata:
   name: synergychat-api
   labels:
     app: synergychat-api
-
 spec:
   replicas: 1
-
   selector:
     matchLabels:
-      app: synergychat-crawler
-
+      app: synergychat-api
   template:
     metadata:
       labels:
-        app: synergychat-crawler
-
+        app: synergychat-api
     spec:
       containers:
-        - name: synergychat-crawler
-          image: bootdotdev/synergychat-crawler:latest
-          env:
-            - name: API_PORT
-              valueFrom:
-                configMapKeyRef:
-                  name: synergychat-crawler-configmap
-                  key: API_PORT
+      - name: synergychat-api
+        image: bootdotdev/synergychat-api:latest
+        env:
+          - name: API_PORT
+            valueFrom:
+              configMapKeyRef:
+                name: synergychat-api-configmap
+                key: API_PORT
