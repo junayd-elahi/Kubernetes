@@ -3,5 +3,6 @@ kind: ConfigMap
 metadata:
   name: synergychat-api-configmap
 data:
+  CRAWLER_BASE_URL: "http://crawler-service.crawler.svc.cluster.local"
   API_PORT: "8080"
-  API_DB_FILEPATH: /var/lib/synergychat/api/db.json
+  API_DB_FILEPATH: /persist/db.json
