@@ -5,7 +5,6 @@ metadata:
     app: synergychat-testram
   name: synergychat-testram
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: synergychat-testram
